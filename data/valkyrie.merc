@@ -1,5 +1,7 @@
 {
   "Name": "Valkyrie",
   "Health": 80,
-  "BaseSpeed": 400
+  "BaseSpeed": 400,
+  "PrimaryWeapon": "prefabs/smg.prefab",
+  "SecondaryWeapon": "prefabs/pistol.prefab"
 }

@@ -104,8 +104,8 @@ public partial class Player : AnimatedEntity
 		Components.Create<Mercenary>();
 
 		var inventory = Components.Create<Inventory>();
-		inventory.AddWeapon( PrefabLibrary.Spawn<Weapon>( "prefabs/pistol.prefab" ) );
-		inventory.AddWeapon( PrefabLibrary.Spawn<Weapon>( "prefabs/smg.prefab" ), false );
+		inventory.AddWeapon( PrefabLibrary.Spawn<Weapon>( Mercenary.Resource.PrimaryWeapon ) );
+		inventory.AddWeapon( PrefabLibrary.Spawn<Weapon>( Mercenary.Resource.SecondaryWeapon ), false );
 
 		SetupClothing();
 
