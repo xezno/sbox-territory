@@ -1,4 +1,4 @@
-namespace GameTemplate.Mechanics;
+namespace Territory.Mechanics;
 
 public partial class InteractionMechanic : PlayerControllerMechanic, ISingletonComponent
 {

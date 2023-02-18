@@ -1,4 +1,4 @@
-namespace GameTemplate.Mechanics;
+namespace Territory.Mechanics;
 
 /// <summary>
 /// The basic walking mechanic for the player.

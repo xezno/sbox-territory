@@ -1,6 +1,6 @@
-using GameTemplate.Mechanics;
+using Territory.Mechanics;
 
-namespace GameTemplate;
+namespace Territory;
 
 public partial class PlayerController : EntityComponent<Player>, ISingletonComponent
 {

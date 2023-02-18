@@ -1,4 +1,4 @@
-namespace GameTemplate.UI;
+namespace Territory.UI;
 
 public partial class Chat
 {
@@ -10,7 +10,7 @@ public partial class Chat
 		// Only log clientside if we're not the listen server host
 		if ( !Game.IsListenServer )
 		{
-			Log.Info( $"{name}: {message}" ); 
+			Log.Info( $"{name}: {message}" );
 		}
 	}
 

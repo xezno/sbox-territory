@@ -1,17 +1,16 @@
 ﻿global using Sandbox;
 global using Sandbox.UI;
 global using System;
-global using System.Linq;
 global using System.Collections.Generic;
 global using System.ComponentModel;
-
+global using System.Linq;
 //
-global using GameTemplate.UI;
+global using Territory.UI;
 
 //
 // You don't need to put things in a namespace, but it doesn't hurt.
 //
-namespace GameTemplate;
+namespace Territory;
 
 /// <summary>
 /// This is your game class. This is an entity that is created serverside when

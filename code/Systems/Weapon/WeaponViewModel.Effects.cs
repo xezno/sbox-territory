@@ -1,6 +1,6 @@
-using GameTemplate.Mechanics;
+using Territory.Mechanics;
 
-namespace GameTemplate.Weapons;
+namespace Territory.Weapons;
 
 public partial class WeaponViewModel
 {

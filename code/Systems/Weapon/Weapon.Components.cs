@@ -1,4 +1,4 @@
-namespace GameTemplate.Weapons;
+namespace Territory.Weapons;
 
 public partial class Weapon
 {

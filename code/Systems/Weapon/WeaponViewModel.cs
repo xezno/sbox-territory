@@ -1,4 +1,4 @@
-namespace GameTemplate.Weapons;
+namespace Territory.Weapons;
 
 [Title( "ViewModel" ), Icon( "pan_tool" )]
 public partial class WeaponViewModel : AnimatedEntity

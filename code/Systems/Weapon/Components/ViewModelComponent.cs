@@ -1,4 +1,4 @@
-namespace GameTemplate.Weapons;
+namespace Territory.Weapons;
 
 [Prefab]
 public partial class ViewModelComponent : WeaponComponent, ISingletonComponent

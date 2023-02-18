@@ -1,4 +1,4 @@
-namespace GameTemplate;
+namespace Territory;
 
 public partial class PlayerAnimator : EntityComponent<Player>, ISingletonComponent
 {

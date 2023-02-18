@@ -1,4 +1,4 @@
-namespace GameTemplate.Weapons;
+namespace Territory.Weapons;
 
 [Prefab, Title( "Weapon" ), Icon( "track_changes" )]
 public partial class Weapon : AnimatedEntity

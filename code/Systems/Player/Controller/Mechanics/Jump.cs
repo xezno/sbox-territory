@@ -1,4 +1,4 @@
-namespace GameTemplate.Mechanics;
+namespace Territory.Mechanics;
 
 /// <summary>
 /// The jump mechanic for players.

@@ -1,7 +1,7 @@
-using GameTemplate.Mechanics;
-using GameTemplate.Weapons;
+using Territory.Mechanics;
+using Territory.Weapons;
 
-namespace GameTemplate;
+namespace Territory;
 
 public partial class Player : AnimatedEntity
 {

@@ -1,4 +1,4 @@
-namespace GameTemplate.Mechanics;
+namespace Territory.Mechanics;
 
 /// <summary>
 /// AirMove decides how the player moves while in the air. Drives effects such as gravity, wind, etc.
@@ -17,7 +17,7 @@ public partial class AirMoveMechanic : PlayerControllerMechanic
 		ctrl.BaseVelocity = ctrl.BaseVelocity.WithZ( 0 );
 
 		var groundedAtStart = GroundEntity.IsValid();
-		if ( groundedAtStart ) 
+		if ( groundedAtStart )
 			return;
 
 		var wishVel = ctrl.GetWishVelocity( true );

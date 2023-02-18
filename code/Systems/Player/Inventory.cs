@@ -1,6 +1,6 @@
-using GameTemplate.Weapons;
+using Territory.Weapons;
 
-namespace GameTemplate;
+namespace Territory;
 
 /// <summary>
 /// The player's inventory holds a player's weapons, and holds the player's current weapon.

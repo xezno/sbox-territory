@@ -1,7 +1,7 @@
-using GameTemplate.Weapons;
 using Sandbox.Diagnostics;
+using Territory.Weapons;
 
-namespace GameTemplate;
+namespace Territory;
 
 public partial class Player
 {

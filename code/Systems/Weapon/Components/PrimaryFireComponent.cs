@@ -1,6 +1,4 @@
-using GameTemplate.Mechanics;
-
-namespace GameTemplate.Weapons;
+namespace Territory.Weapons;
 
 [Prefab]
 public partial class PrimaryFire : WeaponComponent, ISingletonComponent
