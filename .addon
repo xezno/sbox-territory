@@ -1,0 +1,83 @@
+{
+  "Title": "Territory",
+  "Type": "game",
+  "Org": "alex",
+  "Ident": "territory",
+  "Tags": "shooter fps wolfet dirtybomb",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "ResourcePaths": [],
+  "HasCode": true,
+  "CodePath": "/code/",
+  "Metadata": {
+    "MaxPlayers": 64,
+    "MinPlayers": 1,
+    "GameNetworkType": "Multiplayer",
+    "MapSelect": "Unrestricted",
+    "MapList": [
+      "gkaf.motel"
+    ],
+    "RankType": "None",
+    "PerMapRanking": false,
+    "LeaderboardType": "None",
+    "Summary": "A first person shooter sample project.",
+    "Description": "",
+    "Public": true,
+    "ControlModes": {
+      "Keyboard": true,
+      "Gamepad": true
+    },
+    "Collision": {
+      "Defaults": {
+        "solid": "Collide",
+        "trigger": "Trigger",
+        "ladder": "Ignore",
+        "water": "Trigger",
+        "player": "Collide"
+      },
+      "Pairs": [
+        {
+          "a": "solid",
+          "b": "solid",
+          "r": "Collide"
+        },
+        {
+          "a": "trigger",
+          "b": "playerclip",
+          "r": "Ignore"
+        },
+        {
+          "a": "trigger",
+          "b": "solid",
+          "r": "Trigger"
+        },
+        {
+          "a": "solid",
+          "b": "trigger",
+          "r": "Collide"
+        },
+        {
+          "a": "playerclip",
+          "b": "solid",
+          "r": "Collide"
+        },
+        {
+          "a": "player",
+          "b": "player",
+          "r": "Trigger"
+        }
+      ]
+    },
+    "ProjectTemplate": {
+      "Icon": "directions_walk",
+      "Order": -12
+    },
+    "CsProjName": "",
+    "Compiler": {
+      "RootNamespace": "Territory",
+      "DefineConstants": "SANDBOX;ADDON;DEBUG",
+      "NoWarn": "1701;1702;1591;"
+    }
+  }
+}
