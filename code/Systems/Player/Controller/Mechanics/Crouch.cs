@@ -13,7 +13,6 @@ public partial class CrouchMechanic : PlayerControllerMechanic
 	{
 		if ( !Input.Down( InputButton.Duck ) ) return false;
 		if ( !Controller.GroundEntity.IsValid() ) return false;
-		if ( Controller.IsMechanicActive<SprintMechanic>() ) return false;
 
 		return true;
 	}

@@ -7,6 +7,7 @@ public partial class JumpMechanic : PlayerControllerMechanic
 {
 	public override int SortOrder => 25;
 	private float Gravity => 700f;
+	private float LongJumpImpulse => 240f;
 
 	protected override bool ShouldStart()
 	{
@@ -26,5 +27,15 @@ public partial class JumpMechanic : PlayerControllerMechanic
 
 		Controller.GetMechanic<WalkMechanic>()
 			.ClearGroundEntity();
+
+		if ( Controller.IsMechanicActive<CrouchMechanic>() )
+		{
+			// This is an air jump
+			var lookDir = Player.EyeRotation.Forward;
+			lookDir = lookDir.WithZ( 0 ).Normal;
+
+			// Impulse - shoot player forwards for a long jump
+			Velocity += lookDir * LongJumpImpulse;
+		}
 	}
 }
