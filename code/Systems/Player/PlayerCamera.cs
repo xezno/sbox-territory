@@ -27,6 +27,7 @@ public partial class PlayerCamera : EntityComponent<Player>, ISingletonComponent
 		pp.Saturation = 1f;
 		pp.FilmGrain.Response = 1f;
 		pp.FilmGrain.Intensity = 0.01f;
+		pp.ChromaticAberration.Scale = 0.025f;
 	}
 
 	/// <summary>
