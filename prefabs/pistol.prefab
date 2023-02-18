@@ -187,6 +187,14 @@
       "Model": {
         "Type": "Model",
         "Value": "\u0022weapons/rust_pistol/rust_pistol.vmdl\u0022"
+      },
+      "Clip": {
+        "Type": "Int32",
+        "Value": "34"
+      },
+      "Ammo": {
+        "Type": "Int32",
+        "Value": "17"
       }
     }
   }

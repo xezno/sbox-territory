@@ -35,21 +35,23 @@ Info {
 
             label {
                 font-size: 32px;
-                padding: 0 8px;
+                font-weight: 700;
+            }
+
+            label.separator {
+                padding: 0 16px;
             }
 
             label.ammo {
-                font-size: 64px;
-                font-weight: 700;
-            }
-
-            label.clip {
-                font-weight: 700;
+                label {
+                    font-size: 64px;
+                }
             }
         }
 
         &.active {
             background-color: rgba( white, 0.05 );
+
             .name {
                 color: white;
             }

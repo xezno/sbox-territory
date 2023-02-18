@@ -34,6 +34,14 @@ public partial class PrimaryFire : WeaponComponent, ISingletonComponent
 	{
 		base.OnStart( player );
 
+		if ( Weapon.Ammo <= 0 )
+		{
+			Remove();
+			return;
+		}
+
+		Weapon.Ammo--;
+
 		player?.SetAnimParameter( "b_attack", true );
 
 		// Send clientside effects to the player.
