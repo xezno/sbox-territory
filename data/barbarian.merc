@@ -1,0 +1,5 @@
+{
+  "Name": "Barbarian",
+  "Health": 100,
+  "BaseSpeed": 320
+}
