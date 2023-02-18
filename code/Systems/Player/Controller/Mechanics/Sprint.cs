@@ -10,7 +10,9 @@ public partial class SprintMechanic : PlayerControllerMechanic
 	/// Sprint has a higher priority than other mechanics.
 	/// </summary>
 	public override int SortOrder => 10;
-	public override float? WishSpeed => 320f;
+
+	private float SprintMultiplier => 1.25f;
+	public override float? WishSpeed => Player.Mercenary.Resource.BaseSpeed * SprintMultiplier;
 
 	protected override bool ShouldStart()
 	{

@@ -8,8 +8,6 @@ public partial class WalkMechanic : PlayerControllerMechanic
 	public float StopSpeed => 150f;
 	public float StepSize => 18.0f;
 	public float GroundAngle => 46.0f;
-	public float DefaultSpeed => 280f;
-	public float WalkSpeed => 140f;
 	public float GroundFriction => 4.0f;
 	public float MaxNonJumpVelocity => 140.0f;
 	public float SurfaceFriction { get; set; } = 1f;
@@ -21,7 +19,7 @@ public partial class WalkMechanic : PlayerControllerMechanic
 		return true;
 	}
 
-	public override float? WishSpeed => 200f;
+	public override float? WishSpeed => Player.Mercenary.Resource.BaseSpeed;
 
 	protected override void Simulate()
 	{
@@ -154,7 +152,7 @@ public partial class WalkMechanic : PlayerControllerMechanic
 			ClearGroundEntity();
 			return;
 		}
-		
+
 		var pm = Controller.TraceBBox( vBumpOrigin, point, 4.0f );
 
 		var angle = Vector3.GetAngle( Vector3.Up, pm.Normal );

@@ -26,6 +26,11 @@ public partial class Player : AnimatedEntity
 	[BindComponent] public PlayerCamera Camera { get; }
 
 	/// <summary>
+	/// This is responsible for handling the mercenary logic.
+	/// </summary>
+	[BindComponent] public Mercenary Mercenary { get; }
+
+	/// <summary>
 	/// Accessor for getting a player's active weapon.
 	/// </summary>
 	public Weapon ActiveWeapon => Inventory?.ActiveWeapon;
@@ -96,6 +101,7 @@ public partial class Player : AnimatedEntity
 
 		Components.Create<PlayerAnimator>();
 		Components.Create<PlayerCamera>();
+		Components.Create<Mercenary>();
 
 		var inventory = Components.Create<Inventory>();
 		inventory.AddWeapon( PrefabLibrary.Spawn<Weapon>( "prefabs/pistol.prefab" ) );
@@ -119,6 +125,7 @@ public partial class Player : AnimatedEntity
 		Controller?.Simulate( cl );
 		Animator?.Simulate( cl );
 		Inventory?.Simulate( cl );
+		Mercenary?.Simulate( cl );
 	}
 
 	/// <summary>
