@@ -1,29 +1,69 @@
-Info
-{
+Info {
     position: absolute;
     bottom: 64px;
     right: 64px;
-    width: 150px;
-    flex-direction: column-reverse;
+    width: 250px;
+    flex-direction: column;
+    border-radius: $rounding;
+    background-color: rgba( black, 0.7 );
+    overflow: hidden;
+    padding-bottom: 10px;
 
-    cell
-    {
+    .health-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 10px;
+        background-color: white;
+    }
+
+    cell {
+        padding: 15px 30px;
         transition: all 0.2s ease;
+        border-bottom: 1px solid rgba( white, 0.1 );
+        justify-content: center;
+        flex-direction: column;
 
-        &.active
-        {
-            padding: 16px;
+        &:last-child {
+            border-bottom: 0px;
+        }
 
-            .name
-            {
-                color: white;
-                font-size: 24px;
+        &.ammo {
+            padding: 0;
+            flex-direction: row;
+            align-items: center;
+
+            label {
+                font-size: 32px;
+                padding: 0 8px;
+            }
+
+            label.ammo {
+                font-size: 64px;
+                font-weight: 700;
+            }
+
+            label.clip {
+                font-weight: 700;
             }
         }
 
-        .id
-        {
+        &.active {
+            background-color: rgba( white, 0.05 );
+            .name {
+                color: white;
+            }
+        }
+
+        .name, .id {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        .id {
             font-size: 12px;
+            opacity: 0.5;
         }
     }
 }
