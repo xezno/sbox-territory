@@ -1,5 +1,9 @@
 {
   "Name": "Berserker",
-  "Health": 120,
-  "BaseSpeed": 300
+  "Description": "Lorem Ipsum Dolor Sit Amet",
+  "Health": 100,
+  "BaseSpeed": 350,
+  "Type": "Ranged",
+  "PrimaryWeapon": "prefabs/smg.prefab",
+  "SecondaryWeapon": "prefabs/pistol.prefab"
 }

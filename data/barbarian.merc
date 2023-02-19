@@ -1,5 +1,9 @@
 {
   "Name": "Barbarian",
-  "Health": 100,
-  "BaseSpeed": 320
+  "Description": "Lorem Ipsum Dolor Sit Amet",
+  "Health": 200,
+  "BaseSpeed": 150,
+  "Type": "Assault",
+  "PrimaryWeapon": "prefabs/smg.prefab",
+  "SecondaryWeapon": "prefabs/pistol.prefab"
 }
