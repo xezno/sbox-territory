@@ -7,22 +7,20 @@ global using System.Linq;
 //
 global using Territory.UI;
 
-//
-// You don't need to put things in a namespace, but it doesn't hurt.
-//
 namespace Territory;
 
-/// <summary>
-/// This is your game class. This is an entity that is created serverside when
-/// the game starts, and is replicated to the client. 
-/// 
-/// You can use this to create things like HUDs and declare which player class
-/// to use for spawned players.
-/// </summary>
-public partial class TemplateGameManager : GameManager
+public partial class TerritoryGameManager : GameManager
 {
-	public TemplateGameManager()
+	public List<MercResource> MercResources { get; private set; } = new();
+
+	public static TerritoryGameManager Instance { get; private set; }
+
+	public TerritoryGameManager()
 	{
+		Instance = this;
+
+		MercResources = ResourceLibrary.GetAll<MercResource>().ToList();
+
 		if ( Game.IsClient )
 		{
 			Game.RootPanel = new Hud();
@@ -33,9 +31,6 @@ public partial class TemplateGameManager : GameManager
 		}
 	}
 
-	/// <summary>
-	/// A client has joined the server. Make them a pawn to play with
-	/// </summary>
 	public override void ClientJoined( IClient client )
 	{
 		base.ClientJoined( client );
