@@ -158,7 +158,7 @@ public partial class WeaponViewModel
 			ApplyPositionOffset( new( 0, 0, 1 ), airLerp );
 
 			// Sprinting Camera Rotation
-			Camera.Rotation *= Rotation.From(
+			Rotation *= Rotation.From(
 				new Angles(
 					MathF.Abs( MathF.Sin( cycle ) * 1.0f ),
 					MathF.Cos( cycle ),

@@ -1,8 +1,8 @@
 ﻿namespace Territory;
 
-public class Mercenary : EntityComponent<Player>, ISingletonComponent
+public partial class Mercenary : EntityComponent<Player>, ISingletonComponent
 {
-	public MercResource Resource { get; set; }
+	[Net] public MercResource Resource { get; set; }
 
 	public Mercenary()
 	{
@@ -11,12 +11,11 @@ public class Mercenary : EntityComponent<Player>, ISingletonComponent
 
 	public void Simulate( IClient cl )
 	{
-		int line = 10;
-		if ( Game.IsClient )
-			line += 10;
+		//
+	}
 
-		var realm = (Game.IsClient) ? "CL" : "SV";
-
-		DebugOverlay.ScreenText( $"[{realm}] Current merc: {Resource.Name}", line );
+	public void SwitchMercenary( string mercPath )
+	{
+		Resource = ResourceLibrary.Get<MercResource>( mercPath );
 	}
 }

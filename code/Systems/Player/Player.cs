@@ -261,4 +261,13 @@ public partial class Player : AnimatedEntity
 	{
 		(ConsoleSystem.Caller.Pawn as Player).Health = value;
 	}
+
+	[ConCmd.Server( "tt_sv_switch_merc" )]
+	public static void SwitchMercenary( string mercPath )
+	{
+		var player = ConsoleSystem.Caller.Pawn as Player;
+
+		DoSuicide();
+		player.Mercenary?.SwitchMercenary( mercPath );
+	}
 }

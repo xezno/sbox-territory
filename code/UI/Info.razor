@@ -10,8 +10,8 @@
         {
             i++;
             <cell class="@(weapon == Weapon ? "active" : "")">
-                <label class="name">@weapon.Name</label>
-                <label class="id">Press [@i]</label>
+                <label class="subtitle">@weapon.Name</label>
+                <label class="hint">Press [@i]</label>
             </cell>
         }
     }
@@ -26,16 +26,16 @@
 
 @code 
 {
-    public string Health => $"{Player.Health:F0}";
     public Player Player => Game.LocalPawn as Player;
     public Weapon Weapon => Player?.ActiveWeapon;
     public Inventory Inventory => Player.Inventory;
 
+    public string Health => $"{Player.Health:F0}";
     public string Ammo => $"{Player.ActiveWeapon.Ammo}";
     public string Clip => $"{Player.ActiveWeapon.Clip}";
 
     protected override int BuildHash()
     {
-        return HashCode.Combine(Player?.Health, Weapon, Player.ActiveWeapon.Ammo, Player.ActiveWeapon.Clip);
+        return HashCode.Combine(Player?.Health, Weapon, Player?.ActiveWeapon?.Ammo, Player?.ActiveWeapon?.Clip);
     }
 }

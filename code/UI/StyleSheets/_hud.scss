@@ -1,15 +1,45 @@
 @import "/UI/StyleSheets/_theme.scss";
 @import "_chat.scss";
 @import "_info.scss";
+@import "_mercswitcher.scss";
 
 label {
     font-family: $font-family;
     color: white;
+
+    &.title {
+        font-size: 20px;
+    }
+
+    &.subtitle {
+        font-size: 16px;
+    }
+
+    &.hint {
+        font-size: 12px;
+        opacity: 0.5;
+    }
+
+    &.title, &.subtitle, &.hint {
+        font-weight: 800;
+        text-transform: uppercase;
+    }
 }
 
 iconpanel, icon, i {
     label {
         font-family: MaterialIcons;
     }
+
     font-weight: 600;
+}
+
+// Dumb Hacks because razor is a piece of shit!!!
+// man what the FUCK
+label > label {
+    margin-left: -2px;
+}
+
+label.subtitle > label {
+    margin-left: -4px;
 }

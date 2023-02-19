@@ -1,0 +1,53 @@
+﻿@using Territory.Weapons;
+
+@namespace Territory
+
+<root>
+	<cell>
+		<label class="title">Mercenaries</label>
+		<label class="hint">Select a mercenary</label>
+	</cell>
+
+	@foreach (var mercResource in MercResources)
+	{
+		<cell class="@(mercResource == SelectedMercResource ? "active" : "")" @onclick=@( () => SwitchMercenary( mercResource ) )>
+			<label class="subtitle">@mercResource.Name</label>
+
+			<span>
+				<i>@mercResource.Type.ToIcon()</i>
+				<label class="hint">@mercResource.Type.ToDisplayString()</label>
+			</span>
+
+			<label>@mercResource.Description</label>
+
+			<div class="stats">
+				<mark>@mercResource.Health <i>monitor_heart</i></mark>
+				<mark>@mercResource.BaseSpeed <i>fast_forward</i></mark>
+			</div>
+		</cell>
+	}
+</root>
+
+@code
+{
+	public Player Player => Game.LocalPawn as Player;
+	public MercResource SelectedMercResource => Player.Mercenary.Resource;
+	public List<MercResource> MercResources => TerritoryGameManager.Instance.MercResources;
+	public string CurrentMerc => $"{Player.Mercenary.Resource.Name}";
+
+	protected override int BuildHash()
+	{
+		return HashCode.Combine(CurrentMerc);
+	}
+
+	protected void SwitchMercenary(MercResource target)
+	{
+		Log.Info($"Switching to {target.Name}");
+		Player.SwitchMercenary(target.ResourcePath);
+	}
+
+	public override void Tick()
+	{
+		SetClass("visible", Input.Down(InputButton.Menu));
+	}
+}
