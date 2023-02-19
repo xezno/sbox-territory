@@ -66,6 +66,9 @@ public partial class Player : AnimatedEntity
 		EnableHitboxes = true;
 
 		Tags.Add( "player" );
+
+		// Persistent components
+		Components.Create<Mercenary>();
 	}
 
 	/// <summary>
@@ -101,7 +104,6 @@ public partial class Player : AnimatedEntity
 
 		Components.Create<PlayerAnimator>();
 		Components.Create<PlayerCamera>();
-		Components.Create<Mercenary>();
 
 		var inventory = Components.Create<Inventory>();
 		inventory.AddWeapon( PrefabLibrary.Spawn<Weapon>( Mercenary.Resource.PrimaryWeapon ) );
