@@ -2,7 +2,7 @@
   "Name": "Berserker",
   "Description": "Lorem Ipsum Dolor Sit Amet",
   "Health": 100,
-  "BaseSpeed": 350,
+  "BaseSpeed": 250,
   "Type": "Ranged",
   "PrimaryWeapon": "prefabs/smg.prefab",
   "SecondaryWeapon": "prefabs/pistol.prefab"

@@ -2,7 +2,7 @@
   "Name": "Valkyrie",
   "Description": "Lorem Ipsum Dolor Sit Amet",
   "Health": 80,
-  "BaseSpeed": 370,
+  "BaseSpeed": 270,
   "Type": "Medic",
   "PrimaryWeapon": "prefabs/smg.prefab",
   "SecondaryWeapon": "prefabs/pistol.prefab"
