@@ -84,13 +84,23 @@
         var weapon = player?.Inventory?.ActiveWeapon;
         var isAiming = weapon?.Tags.Has( "aiming" ) ?? false;
 
-        var distance = player?.Velocity.Length.LerpInverse( 0, 750, true ).Remap( 0, 1, 20, 60 ) ?? 20f;
+        if (player.Controller == null)
+        {
+            PixelDistance = 100000f;
+            return;
+        }   
+
+        var distance = player?.Velocity.WithZ( 0 ).Length.LerpInverse( 0, 750, true ).Remap( 0, 1, 20, 60 ) ?? 20f;
         float timeSinceActivated = weapon?.GetComponent<PrimaryFire>()?.TimeSinceActivated ?? 1;
         var fireAmt = 1 - timeSinceActivated.LerpInverse( 0, 0.25f, true );
 
         distance += fireAmt * 50;
+        
+        if (player.Controller.GroundEntity == null)
+            distance *= 2.0f;
 
         PixelDistance = distance;
+        DebugOverlay.ScreenText($"{PixelDistance}");
 
         SetClass( "visible", !isAiming );
     }
