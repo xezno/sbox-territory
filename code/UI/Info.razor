@@ -3,39 +3,39 @@
 @namespace Territory
 
 <root class="with-flex column with-gap with-shadow">
-    @{
-        if ( Inventory == null ) return;
-        int i = 0;
-        foreach( var weapon in Inventory.Weapons )
-        {
-            i++;
-            <cell class="@(weapon == Weapon ? "active" : "")">
-                <label class="subtitle">@weapon.Name</label>
-                <label class="hint">Press [@i]</label>
-            </cell>
-        }
-    }
-    <cell class="ammo">
-        <label class="ammo">@Ammo</label>
-        <label class="separator">/</label>
-        <label class="clip">@Clip</label>
-    </cell>
+	@{
+		if (Inventory == null) return;
+		int i = 0;
+		foreach (var weapon in Inventory.Weapons)
+		{
+			i++;
+			<cell class="@(weapon == Weapon ? "active" : "")">
+				<label class="subtitle">@weapon.Name</label>
+				<label class="hint">Press [@i]</label>
+			</cell>
+		}
+	}
+	<cell class="ammo">
+		<label class="ammo">@Ammo</label>
+		<label class="separator">/</label>
+		<label class="clip">@Clip</label>
+	</cell>
 
-    <div class="health-bar" style="width: @(Health)%;"></div>
+	<div class="health-bar" style="width: @(Health)%;"></div>
 </root>
 
-@code 
+@code
 {
-    public Player Player => Game.LocalPawn as Player;
-    public Weapon Weapon => Player?.ActiveWeapon;
-    public Inventory Inventory => Player.Inventory;
+	public Player Player => Game.LocalPawn as Player;
+	public Weapon Weapon => Player?.ActiveWeapon;
+	public Inventory Inventory => Player.Inventory;
 
-    public string Health => $"{Player.Health:F0}";
-    public string Ammo => $"{Player.ActiveWeapon.Ammo}";
-    public string Clip => $"{Player.ActiveWeapon.Clip}";
+	public string Health => $"{Player.Health:F0}";
+	public string Ammo => $"{Player.ActiveWeapon.Ammo}";
+	public string Clip => $"{Player.ActiveWeapon.Clip}";
 
-    protected override int BuildHash()
-    {
-        return HashCode.Combine(Player?.Health, Weapon, Player?.ActiveWeapon?.Ammo, Player?.ActiveWeapon?.Clip);
-    }
+	protected override int BuildHash()
+	{
+		return HashCode.Combine(Player?.Health, Weapon, Player?.ActiveWeapon?.Ammo, Player?.ActiveWeapon?.Clip);
+	}
 }
