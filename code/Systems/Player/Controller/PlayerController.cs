@@ -14,6 +14,10 @@ public partial class PlayerController : EntityComponent<Player>, ISingletonCompo
 
 	public Player Player => Entity;
 
+	public bool IsGrounded => GroundEntity != null;
+	public bool IsSprinting => IsMechanicActive<SprintMechanic>() && IsGrounded;
+	public bool IsCrouching => IsMechanicActive<CrouchMechanic>() && IsGrounded;
+
 	/// <summary>
 	/// A list of mechanics used by the player controller.
 	/// </summary>
