@@ -97,6 +97,7 @@ public partial class Player : AnimatedEntity
 		// Add mechanics.
 		Components.Create<WalkMechanic>();
 		Components.Create<JumpMechanic>();
+		Components.Create<WallJumpMechanic>();
 		Components.Create<AirMoveMechanic>();
 		Components.Create<SprintMechanic>();
 		Components.Create<CrouchMechanic>();

@@ -38,5 +38,7 @@ public partial class JumpMechanic : PlayerControllerMechanic
 			// Impulse - shoot player forwards for a long jump
 			Velocity += lookDir * LongJumpImpulse;
 		}
+
+		Controller.TimeSinceJumped = 0;
 	}
 }

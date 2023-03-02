@@ -10,6 +10,7 @@ public partial class PlayerController : EntityComponent<Player>, ISingletonCompo
 	public Vector3 BaseVelocity { get; set; }
 	public Vector3 GroundNormal { get; set; }
 	public float CurrentGroundAngle { get; set; }
+	public TimeSince TimeSinceJumped { get; set; }
 
 	public Player Player => Entity;
 
@@ -126,7 +127,7 @@ public partial class PlayerController : EntityComponent<Player>, ISingletonCompo
 			DebugOverlay.Box( Position, hull.Mins, hull.Maxs, Color.Red );
 			DebugOverlay.Box( Position, hull.Mins, hull.Maxs, Color.Blue );
 
-			var lineOffset = 50;
+			var lineOffset = 5;
 
 			DebugOverlay.ScreenText( $"Player Controller", ++lineOffset );
 			DebugOverlay.ScreenText( $"       Position: {Position}", ++lineOffset );
