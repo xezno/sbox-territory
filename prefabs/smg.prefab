@@ -150,6 +150,28 @@
             "Value": "[]"
           }
         }
+      },
+      {
+        "Guid": "8fcc8054-3ea3-48f5-96bf-7a28e1a47261",
+        "Class": "Reload",
+        "Keys": {
+          "Clip": {
+            "Type": "Int32",
+            "Value": "30"
+          },
+          "Ammo": {
+            "Type": "Int32",
+            "Value": "90"
+          },
+          "ReloadTime": {
+            "Type": "Single",
+            "Value": "1"
+          },
+          "_name": {
+            "Value": "\u0022New Component\u0022"
+          },
+          "_tags": {}
+        }
       }
     ],
     "Keys": {

@@ -8,8 +8,8 @@ public partial class Weapon : AnimatedEntity
 	[Net, Prefab, Category( "Animation" )] public WeaponHandedness Handedness { get; set; } = WeaponHandedness.Both;
 	[Net, Prefab, Category( "Animation" )] public float HoldTypePose { get; set; } = 0;
 
-	[Net, Predicted, Prefab, Category( "Weapon" )] public int Clip { get; set; } = 90;
-	[Net, Predicted, Prefab, Category( "Weapon" )] public int Ammo { get; set; } = 30;
+	[Net, Predicted, Category( "Weapon" )] public int Clip { get; set; } = 0;
+	[Net, Predicted, Category( "Weapon" )] public int Ammo { get; set; } = 0;
 
 	public AnimatedEntity EffectEntity => ViewModelEntity.IsValid() ? ViewModelEntity : this;
 	public WeaponViewModel ViewModelEntity { get; protected set; }
@@ -20,6 +20,9 @@ public partial class Weapon : AnimatedEntity
 		EnableHideInFirstPerson = true;
 		EnableShadowInFirstPerson = true;
 		EnableDrawing = false;
+
+		Clip = GetComponent<Reload>().Clip;
+		Ammo = GetComponent<Reload>().Ammo;
 	}
 
 	/// <summary>

@@ -19,6 +19,7 @@ public partial class PrimaryFire : WeaponComponent, ISingletonComponent
 		if ( !Input.Down( InputButton.PrimaryAttack ) ) return false;
 		if ( TimeUntilCanFire > 0 ) return false;
 		if ( !Weapon.CanFire( player ) ) return false;
+		if ( Weapon.Clip <= 0 ) return false;
 
 		return TimeSinceActivated > FireDelay;
 	}
@@ -35,13 +36,7 @@ public partial class PrimaryFire : WeaponComponent, ISingletonComponent
 	{
 		base.OnStart( player );
 
-		if ( Weapon.Ammo <= 0 )
-		{
-			Remove();
-			return;
-		}
-
-		Weapon.Ammo--;
+		Weapon.Clip--;
 
 		player?.SetAnimParameter( "b_attack", true );
 
