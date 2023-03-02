@@ -65,8 +65,10 @@
 </root>
 
 @code {
-    public float PixelDistance { get; set; } = 20f;
-    public string Distance => $"{PixelDistance}px";
+    private float _pixelDistance;
+    private float _smoothedPixelDistance;
+
+    public string Distance => $"{_smoothedPixelDistance}px";
 
     protected override void OnAfterTreeRender(bool firstTime)
     {
@@ -86,7 +88,7 @@
 
         if (player.Controller == null)
         {
-            PixelDistance = 100000f;
+            _pixelDistance = 100000f;
             return;
         }   
 
@@ -99,8 +101,8 @@
         if (player.Controller.GroundEntity == null)
             distance *= 2.0f;
 
-        PixelDistance = distance;
-        DebugOverlay.ScreenText($"{PixelDistance}");
+        _pixelDistance = distance;
+        _smoothedPixelDistance = _smoothedPixelDistance.LerpTo(_pixelDistance, 10f * Time.Delta);
 
         SetClass( "visible", !isAiming );
     }
