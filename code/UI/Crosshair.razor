@@ -84,7 +84,7 @@
     {
         var player = Game.LocalPawn as Player;
         var weapon = player?.Inventory?.ActiveWeapon;
-        var isAiming = weapon?.Tags.Has( "aiming" ) ?? false;
+        var canFire = weapon?.CanFire( player ) ?? false;
 
         if (player.Controller == null)
         {
@@ -104,6 +104,6 @@
         _pixelDistance = distance;
         _smoothedPixelDistance = _smoothedPixelDistance.LerpTo(_pixelDistance, 10f * Time.Delta);
 
-        SetClass( "visible", !isAiming );
+        SetClass("visible", canFire);
     }
 }

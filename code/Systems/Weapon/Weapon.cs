@@ -23,6 +23,16 @@ public partial class Weapon : AnimatedEntity
 	}
 
 	/// <summary>
+	/// Can we fire the weapon right now?
+	/// Note that this should not include things like ammo count - just whether the player and weapon are 
+	/// in a valid firing state right now.
+	/// </summary>
+	public bool CanFire( Player player )
+	{
+		return !player.Controller.IsSprinting;
+	}
+
+	/// <summary>
 	/// Can we holster the weapon right now? Reasons to reject this could be that we're reloading the weapon..
 	/// </summary>
 	/// <returns></returns>

@@ -18,6 +18,7 @@ public partial class PrimaryFire : WeaponComponent, ISingletonComponent
 	{
 		if ( !Input.Down( InputButton.PrimaryAttack ) ) return false;
 		if ( TimeUntilCanFire > 0 ) return false;
+		if ( !Weapon.CanFire( player ) ) return false;
 
 		return TimeSinceActivated > FireDelay;
 	}
