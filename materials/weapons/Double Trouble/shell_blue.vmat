@@ -1,0 +1,11 @@
+
+Layer0
+{
+	shader "complex.vfx"
+
+	TextureColor "materials/weapons/double trouble/shell_blue_color.png"
+	TextureAmbientOcclusion "materials/default/default_ao.tga"
+	TextureNormal "materials/weapons/double trouble/shell_normal.png"
+	TextureRoughness "materials/weapons/double trouble/shell_rough.png"
+
+}

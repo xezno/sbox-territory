@@ -4,6 +4,6 @@
   "Health": 80,
   "BaseSpeed": 270,
   "Type": "Medic",
-  "PrimaryWeapon": "prefabs/smg.prefab",
+  "PrimaryWeapon": "prefabs/shotgun.prefab",
   "SecondaryWeapon": "prefabs/pistol.prefab"
 }
