@@ -5,6 +5,8 @@ public partial class Player
 	[ClientRpc]
 	private void CreateRagdoll( Vector3 velocity, Vector3 forcePos, Vector3 force, int bone, bool bullet, bool blast )
 	{
+		return;
+
 		var ent = new ModelEntity();
 		ent.Tags.Add( "ragdoll", "solid", "debris" );
 		ent.Position = Position;

@@ -48,7 +48,8 @@ public partial class Player : AnimatedEntity
 	/// <summary>
 	/// The model your player will use.
 	/// </summary>
-	static Model PlayerModel = Model.Load( "models/citizen/citizen.vmdl" );
+	static Model PlayerModel = Model.Load( "models/humans/male.vmdl" );
+	static Model HeadModel = Model.Load( "models/humans/heads/frank/frank.vmdl" );
 
 	/// <summary>
 	/// When the player is first created. This isn't called when a player respawns.
@@ -69,6 +70,16 @@ public partial class Player : AnimatedEntity
 
 		// Persistent components
 		Components.Create<Mercenary>();
+
+		// Player head
+		var head = new AnimatedEntity();
+		head.Model = HeadModel;
+		head.Owner = this;
+		head.EnableHideInFirstPerson = true;
+		head.EnableShadowInFirstPerson = true;
+		head.EnableHitboxes = true;
+		head.EnableLagCompensation = true;
+		head.SetParent( this, true );
 	}
 
 	/// <summary>
@@ -110,7 +121,7 @@ public partial class Player : AnimatedEntity
 		inventory.AddWeapon( PrefabLibrary.Spawn<Weapon>( Mercenary.Resource.PrimaryWeapon ) );
 		inventory.AddWeapon( PrefabLibrary.Spawn<Weapon>( Mercenary.Resource.SecondaryWeapon ), false );
 
-		SetupClothing();
+		// SetupClothing();
 
 		GameManager.Current?.MoveToSpawnpoint( this );
 		ResetInterpolation();
