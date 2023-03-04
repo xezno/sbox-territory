@@ -56,6 +56,9 @@ public partial class Player
 
 	public override void BuildInput()
 	{
+		if ( Client.Components.Get<DevCamera>()?.Enabled ?? false )
+			return;
+
 		Inventory?.BuildInput();
 
 		MoveInput = Input.AnalogMove;
