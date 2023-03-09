@@ -84,7 +84,9 @@
     {
         var player = Game.LocalPawn as Player;
         var weapon = player?.Inventory?.ActiveWeapon;
-        var canFire = weapon?.CanFire( player ) ?? false;
+        var canFire = weapon?.CanFire(player) ?? false;
+        var isAiming = weapon?.IsAiming ?? false;
+        var isVisible = canFire && !isAiming;
 
         if (player.Controller == null)
         {
@@ -97,13 +99,13 @@
         var fireAmt = 1 - timeSinceActivated.LerpInverse( 0, 0.25f, true );
 
         distance += fireAmt * 50;
-        
+
         if (player.Controller.GroundEntity == null)
             distance *= 2.0f;
 
         _pixelDistance = distance;
         _smoothedPixelDistance = _smoothedPixelDistance.LerpTo(_pixelDistance, 10f * Time.Delta);
 
-        SetClass("visible", canFire);
+        SetClass("visible", isVisible);
     }
 }
