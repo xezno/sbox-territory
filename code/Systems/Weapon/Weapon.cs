@@ -11,6 +11,9 @@ public partial class Weapon : AnimatedEntity
 	[Net, Predicted, Category( "Weapon" )] public int Clip { get; set; } = 0;
 	[Net, Predicted, Category( "Weapon" )] public int Ammo { get; set; } = 0;
 
+	[BindComponent] private Aim AimComponent { get; }
+	public bool IsAiming => AimComponent.IsActive;
+
 	public AnimatedEntity EffectEntity => ViewModelEntity.IsValid() ? ViewModelEntity : this;
 	public WeaponViewModel ViewModelEntity { get; protected set; }
 	public Player Player => Owner as Player;
