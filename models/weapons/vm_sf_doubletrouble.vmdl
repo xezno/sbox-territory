@@ -134,7 +134,15 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "AimIn"
+						name = "AimIn_delta"
+						children = 
+						[
+							{
+								_class = "AnimSubtract"
+								anim_name = "Idle"
+								frame = 0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -147,7 +155,7 @@
 						anim_markup_ordered = false
 						disable_compression = false
 						source_filename = "models/weapons/vm_sf_doubletrouble.fbx"
-						start_frame = 260
+						start_frame = 265
 						end_frame = 280
 						framerate = -1.0
 						take = 0
@@ -176,7 +184,15 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "AimOut"
+						name = "AimOut_delta"
+						children = 
+						[
+							{
+								_class = "AnimSubtract"
+								anim_name = "Fire"
+								frame = 0
+							},
+						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -189,7 +205,7 @@
 						anim_markup_ordered = false
 						disable_compression = false
 						source_filename = "models/weapons/vm_sf_doubletrouble.fbx"
-						start_frame = 310
+						start_frame = 315
 						end_frame = 330
 						framerate = -1.0
 						take = 0
@@ -218,6 +234,30 @@
 					},
 				]
 				default_root_bone_name = ""
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "aim_near"
+						parent_bone = "Barrel"
+						relative_origin = [ -6.541387, 0.0, 0.0 ]
+						relative_angles = [ -0.0, 0.0, -0.004694 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "aim_far"
+						parent_bone = "Barrel"
+						relative_origin = [ -4.903162, 39.201786, -0.003227 ]
+						relative_angles = [ -0.0, 0.0, -0.009956 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
 			},
 		]
 		model_archetype = ""

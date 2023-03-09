@@ -29,7 +29,7 @@
           },
           "FireDelay": {
             "Type": "Single",
-            "Value": "0.6"
+            "Value": "0.3"
           },
           "BaseDamage": {
             "Type": "Single",
@@ -97,7 +97,7 @@
           },
           "GlobalPositionOffset": {
             "Type": "Vector3",
-            "Value": "\u00227.95,-5,-1.5\u0022"
+            "Value": "\u00220,0,2.3\u0022"
           },
           "GlobalAngleOffset": {
             "Type": "Angles",
